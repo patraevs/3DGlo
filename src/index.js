@@ -1,7 +1,6 @@
-const burger = require('./modules/burger')
-import sliderOne from './modules/slider'
-const sliderTwo = require('./modules/badScript')
+import oneModule from './modules/one'
+import twoModule from './modules/two'
 
-burger()
-sliderOne()
-sliderTwo()
+oneModule()
+twoModule()
+
