@@ -1,6 +1,7 @@
-import oneModule from './modules/timer'
-import twoModule from './modules/two'
+import timer from './modules/timer'
+import menu from './modules/menu'
+import modal from './modules/modal'
 
-oneModule('13 april 2025')
-twoModule()
-
+timer('13 april 2025')
+menu()
+modal()
