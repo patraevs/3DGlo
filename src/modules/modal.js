@@ -22,7 +22,6 @@ const modal = () => {
 
     const animacion = () => {
         count++
-        console.log(count);
         modalWindow.style.top = count * 2 + 'px'
         if (count < 100) setTimeout(animacion, 10)
     }
