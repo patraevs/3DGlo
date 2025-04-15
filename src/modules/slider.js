@@ -1,7 +1,21 @@
 const slider = () => {
     const sliderBlock = document.querySelector('.portfolio-content')
     const slides = document.querySelectorAll('.portfolio-item')
-    const dots = document.querySelectorAll('.dot')
+
+    const dotsContainer = sliderBlock.querySelector('.portfolio-dots')
+
+    const addDots = () => {
+
+        slides.forEach(() => {
+            const dot = document.createElement('li')
+            dot.classList.add('dot')
+            dotsContainer.append(dot)
+        })
+    }
+
+    addDots()
+
+    const dots = dotsContainer.querySelectorAll('.dot')
 
     const timeInterval = 2000
 
