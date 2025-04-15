@@ -5,6 +5,7 @@ import validation from './modules/validation'
 import tabs from './modules/tabs'
 import slider from './modules/slider'
 import { sliderCarousel } from './modules/sliderCarousel'
+import calc from './modules/calc'
 
 timer('17 april 2025')
 menu()
@@ -13,3 +14,4 @@ validation()
 tabs()
 slider()
 sliderCarousel()
+calc(100)
