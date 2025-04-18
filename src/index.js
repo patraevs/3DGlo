@@ -8,7 +8,7 @@ import { sliderCarousel } from './modules/sliderCarousel'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 
-timer('17 april 2025')
+timer('19 april 2025')
 menu()
 modal()
 validation()
@@ -18,6 +18,24 @@ sliderCarousel()
 calc(100)
 sendForm({
     formId: 'form1',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+})
+sendForm({
+    formId: 'form2',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+})
+sendForm({
+    formId: 'form3',
     someElem: [
         {
             type: 'block',

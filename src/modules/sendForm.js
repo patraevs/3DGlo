@@ -5,16 +5,33 @@ const sendForm = ({ formId, someElem = [] }) => {
     const errorText = 'Ошибка...'
     const successText = 'Спасибо! наш менеджер с Вами свяжется!'
 
-    const validate = (list) => {
-        let success = true
+    const validate = () => {
 
-        // list.forEach(input => {
-        //     if (!input.classList.contains('success')) {
-        //         success = false
-        //     }
-        // })
+        const userPhone = document.querySelectorAll('[name="user_phone"]');
+        const userName = document.querySelectorAll('[name="user_name"]');
+        const userMessage = document.querySelectorAll('[name="user_message"]');
 
-        return success
+        let success = true;
+
+        userPhone.forEach(input => {
+            if (/[^0-9+\-\(\)]/.test(input.value)) {
+                success = false;
+            }
+        });
+
+        userName.forEach(input => {
+            if (/[^а-яА-ЯёЁ ]/.test(input.value)) {
+                success = false;
+            }
+        });
+
+        userMessage.forEach(input => {
+            if (/[^а-яА-ЯёЁ0-9 .,!?;:()«»"'-]/.test(input.value)) {
+                success = false;
+            }
+        });
+
+        return success;
     }
 
     const sendData = (data) => {
@@ -49,16 +66,6 @@ const sendForm = ({ formId, someElem = [] }) => {
             }
         })
 
-        console.log('submit ')
-
-        // if (validate(formElements)) {
-        //     sendData(formBody).then(data => {
-        //         console.log(data);
-        //     })
-        // } else {
-        //     alert('Данные не инвалиды!')
-        // }
-
         if (validate(formElements)) {
             sendData(formBody)
                 .then(data => {
@@ -72,7 +79,7 @@ const sendForm = ({ formId, someElem = [] }) => {
                     statusBlock.textContent = errorText
                 })
         } else {
-            alert('Данные не инвалиды!')
+            alert('Данные не Валидны!')
         }
     }
 
@@ -92,5 +99,3 @@ const sendForm = ({ formId, someElem = [] }) => {
 }
 
 export default sendForm
-
-// 17.46 валидация
